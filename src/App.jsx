@@ -36,7 +36,7 @@ function App() {
               <button  className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"><a href="https://wa.me/5588999966424">Entrar em contato</a></button>
             </div>
           </div>
-          <div className="flex justify-center items-center rounded-full shadow-lg overflow-hidden w-70 h-70 md:w-80 md:h-80 border-4 border-amber-50 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
+          <div className="flex justify-center items-center rounded-full shadow-lg overflow-hidden w-72 h-72 md:w-80 md:h-80 border-4 border-amber-50 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
             <img 
               src={Foto_iara}
               alt="Foto Iara Amancio" 
