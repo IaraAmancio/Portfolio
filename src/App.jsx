@@ -59,11 +59,6 @@ function App() {
       </motion.div>
       
 
-    <motion.div
-      initial={{ x: "-100%" }}
-        whileInView={{ x: "0%" }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-        viewport={{ once: false }}>
       {/* Seção Sobre Mim */}
       <motion.div
         initial={{ x: "-100%" }}
