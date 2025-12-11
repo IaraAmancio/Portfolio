@@ -1,1 +1,15 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+
+  @keyframes slideInAnimate {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animated-element{
+    animation: slideInAnimate 1s ease-in-out;
+  }
