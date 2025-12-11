@@ -1,5 +1,8 @@
 // App.js
 import React from 'react';
+
+import { motion } from 'motion/react';
+
 import Foto_iara from './assets/foto_iara.jpg';
 import BootStrap from './assets/icones-tecnologias/bootstrap.png';
 import Html from './assets/icones-tecnologias/html.png';
@@ -26,6 +29,11 @@ function App() {
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Seção Inicial */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        whileInView={{ x: "0%" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        viewport={{ once: false }}>
       <section id="inicio" className="flex items-center justify-center w-full px-4 min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 md:justify-items-end justify-items-center gap-8 w-full max-w-4xl">
           <div className="flex flex-col justify-center items-center">
@@ -45,8 +53,16 @@ function App() {
           </div>
         </div>
       </section>
+      </motion.div>
+      
 
       {/* Seção Sobre Mim */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        whileInView={{ x: "0%" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        viewport={{ once: false }}      
+      >
       <section id="sobre" className="flex justify-center items-center px-4 mt-8">
         <div className="text-center max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
@@ -57,8 +73,16 @@ function App() {
           </p>
         </div>
       </section>
+      </motion.div>
+
 
       {/* Seção Habilidades */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        whileInView={{ x: "0%" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        viewport={{ once: false }}      
+      >
       <section id="habilidades" className="px-4 py-16 mt-8">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Habilidades</h2>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 max-w-6xl mx-auto">
@@ -104,8 +128,16 @@ function App() {
           </div>
         </div>
       </section>
+      </motion.div>
+
 
       {/* Seção Meus Projetos */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        whileInView={{ x: "0%" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        viewport={{ once: false }}     
+    >
       <section id="projetos" className="px-4 py-16">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Meus Projetos</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -135,8 +167,16 @@ function App() {
           </div>
         </div>
       </section>
+      </motion.div>
+
 
       {/* Seção Meus Contatos */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        whileInView={{ x: "0%" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        viewport={{ once: false }}        
+      >
       <section id="contatos" className="px-4 py-16">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Meus Contatos</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-3xl mx-auto">
@@ -170,6 +210,8 @@ function App() {
           </div>
         </div>
       </section>
+      </motion.div>
+
     </div>
   );
 }
