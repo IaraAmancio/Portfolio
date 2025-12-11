@@ -5,8 +5,6 @@ import { motion } from 'motion/react';
 
 import Foto_iara from './assets/foto_iara.jpg';
 
-import { motion } from 'framer-motion';
-
 import BootStrap from './assets/icones-tecnologias/bootstrap.png';
 import Html from './assets/icones-tecnologias/html.png';
 import CSS from './assets/icones-tecnologias/css.png';
