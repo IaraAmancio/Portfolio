@@ -66,7 +66,7 @@ function App() {
       <section id="sobre" className="flex justify-center items-center px-4 mt-8">
         <div className="text-center max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
-          <p className="text-lg md:text-xl leading-relaxed">
+          <p className="text-lg md:text-xl leading-relaxed text-gray-300">
             Desenvolvedora front-end com formação em <strong>Engenharia de Computação</strong> e
             sólida experiência em projetos utilizando JavaScript, TypeScript, React.js, Redux e Tailwind CSS. 
             Sou apaixonada por desenvolvimento web e comprometida com performance, acessibilidade e a entrega de interfaces de alta qualidade.
