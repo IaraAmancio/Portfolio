@@ -4,16 +4,17 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 import Foto_iara from './assets/foto_iara.jpg';
-import BootStrap from './assets/icones-tecnologias/bootstrap.png';
-import Html from './assets/icones-tecnologias/html.png';
-import CSS from './assets/icones-tecnologias/css.png';
-import JavaScript from './assets/icones-tecnologias/javascript.png';
-import Node from './assets/icones-tecnologias/node.png';
-import ReactIcone from './assets/icones-tecnologias/react.png';
-import Redux from './assets/icones-tecnologias/redux.png';
-import Tailwind from './assets/icones-tecnologias/tailwind.png';
-import TypeScript from './assets/icones-tecnologias/typescript.png';
-import Next from './assets/icones-tecnologias/nextjs.png';
+import BootStrap from './assets/icones-tecnologias/bootstrap.svg';
+import Html from './assets/icones-tecnologias/html5.svg';
+import CSS from './assets/icones-tecnologias/css.svg';
+import JavaScript from './assets/icones-tecnologias/javascript.svg';
+import Node from './assets/icones-tecnologias/nodedotjs.svg';
+import ReactIcone from './assets/icones-tecnologias/react.svg';
+import Redux from './assets/icones-tecnologias/redux.svg';
+import Tailwind from './assets/icones-tecnologias/tailwindcss.svg';
+import TypeScript from './assets/icones-tecnologias/typescript.svg';
+import Next from './assets/icones-tecnologias/nextdotjs.svg';
+import Figma from './assets/icones-tecnologias/figma.svg'
 
 import {FaGithub} from 'react-icons/fa';
 import {FaLinkedin} from 'react-icons/fa';
@@ -83,48 +84,53 @@ function App() {
         transition={{ duration: 1, ease: "easeInOut" }}
         viewport={{ once: false }}      
       >
-      <section id="habilidades" className="px-4 py-16 mt-8">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Habilidades</h2>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 max-w-6xl mx-auto">
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={Html} alt="Html" className="mx-auto mb-4 rounded h-32 w-32" />
-            <p className="text-xl font-semibold">HTML</p>
+      <section id="habilidades" className="w-full max-w-8/12 px-4 py-16 mt-8 mx-auto">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-2">Habilidades</h2>
+        <h4 className='text-center mb-12'>Possuo conhecimentos e já desenvolvi projetos com essas tecnologias!</h4>
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-9 max-w-6xl mx-auto">
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={Html} alt="Html" className="mx-auto mb-1 rounded h-18 w-18" />
+            <p className="text-base font-semibold text-black">HTML</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={CSS} alt="Css" className="mx-auto mb-4 rounded h-32 w-32" />
-            <p className="text-xl font-semibold">CSS</p>
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={CSS} alt="Css" className="mx-auto mb-1 rounded h-18 w-18" />
+            <p className="text-base font-semibold text-black">CSS</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={JavaScript} alt="JavaScript" className="mx-auto mb-4 rounded h-32 w-32" />
-            <p className="text-xl font-semibold">JavaScript</p>
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={JavaScript} alt="JavaScript" className="mx-auto mb-1 rounded h-18 w-18" />
+            <p className="text-base font-semibold text-black">JavaScript</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={TypeScript} alt="TypeScript" className="mx-auto mb-4 rounded h-32 w-32 object-contain" />
-            <p className="text-xl font-semibold">TypeScript</p>
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={TypeScript} alt="TypeScript" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
+            <p className="text-base font-semibold text-black">TypeScript</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={Next} alt="Next.js" className="mx-auto mb-4 rounded h-32 w-32 object-contain" />
-            <p className="text-xl font-semibold">Next.js</p>
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={Next} alt="Next.js" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
+            <p className="text-base font-semibold text-black">Next.js</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={ReactIcone} alt="React" className="mx-auto mb-4 rounded h-32 w-32 object-contain" />
-            <p className="text-xl font-semibold">React</p>
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={ReactIcone} alt="React" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
+            <p className="text-base font-semibold text-black">React</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={Tailwind} alt="Tailwind" className="mx-auto mb-4 rounded h-32 w-32 object-contain" />
-            <p className="text-xl font-semibold">Tailwind CSS</p>
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={Tailwind} alt="Tailwind" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
+            <p className="text-base font-semibold text-black">Tailwind</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={BootStrap} alt="Bootstrap" className="mx-auto mb-4 rounded h-32 w-32 object-contain" />
-            <p className="text-xl font-semibold">BootStrap</p>
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={BootStrap} alt="Bootstrap" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
+            <p className="text-base font-semibold text-black">BootStrap</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={Redux} alt="Redux" className="mx-auto mb-4 rounded h-32 w-32 object-contain" />
-            <p className="text-xl font-semibold">Redux</p>
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={Figma} alt="Figma" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
+            <p className="text-base font-semibold text-black">Figma</p>
+          </div>          
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={Redux} alt="Redux" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
+            <p className="text-base font-semibold text-black">Redux</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={Node} alt="Node.js" className="mx-auto mb-4 rounded h-32 w-32 object-contain" />
-            <p className="text-xl font-semibold">Node.js</p>
+          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
+            <img src={Node} alt="Node.js" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
+            <p className="text-base font-semibold text-black">Node.js</p>
           </div>
         </div>
       </section>
