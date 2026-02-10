@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { motion } from 'motion/react';
 
@@ -20,12 +20,70 @@ import {FaGithub} from 'react-icons/fa';
 import {FaLinkedin} from 'react-icons/fa';
 import {FaWhatsapp} from 'react-icons/fa';
 import {MdEmail} from 'react-icons/md';
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 
-import FotoProjeto1 from './assets/foto-projetos/projeto1.png';
-import FotoProjeto2 from './assets/foto-projetos/projeto2.png';
-import FotoProjeto3 from './assets/foto-projetos/projeto3.png';
+import Projeto1 from './assets/foto-projetos/projeto4.png';
+import Projeto2 from './assets/foto-projetos/projeto1.png';
+import Projeto3 from './assets/foto-projetos/projeto2.png';
+import Projeto4 from './assets/foto-projetos/projeto3.png';
+
+
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from  'embla-carousel-autoplay';
 
 function App() {
+  const [ emblaRef, emblaApi ] = useEmblaCarousel({loop: false}, [Autoplay({delay: 3000})]);
+
+  const goToPrev = () => emblaApi?.scrollPrev();
+  const goToNext = () => emblaApi?.scrollNext();
+  
+  useEffect(()=>{
+    if(!emblaApi) return
+      emblaApi.plugins().autoplay?.play()
+  },[emblaApi])
+  
+
+  const projects = [
+    {
+        id: 1,
+        title: "Plataforma E-commerce",
+        description: "Projeto para vendas de carros, com autenticação de usuário", 
+        imgProject: Projeto1, 
+        urlProject: "plataforma-de-vendas-eight.vercel.app", 
+        urlRepositorio: "https://github.com/IaraAmancio/PlataformaDeVendas", 
+        stacks: ["TYPESCRIPT", ,"REACT", "TAILWIND", "FIREBASE"]
+    }, 
+    {
+        id: 2,
+        title: "Planejador de tarefas",
+        description: "Projeto desenvolvido na trilha de desenvolvimento web da RocketSeat", 
+        imgProject: Projeto2, 
+        urlProject: "https://iaraamancio.github.io/ProjetoRocketSeat/", 
+        urlRepositorio: "https://github.com/IaraAmancio/ProjetoRocketSeat", 
+        stacks: ["HTML", "CSS", "JAVASCRIPT"]
+    }, 
+    {
+        id: 3,
+        title: "Library Web Service",
+        description: "Projeto com busca de dados de API de artigos", 
+        imgProject: Projeto3, 
+        urlProject: "https://iaraamancio.github.io/LibraryWebService/", 
+        urlRepositorio: "https://github.com/IaraAmancio/LibraryWebService", 
+        stacks: ["REACT", "JAVASCRIPT"]
+    }, 
+    {
+        id: 4,
+        title: "Consulta de Pókemons",
+        description: "Consula de API de pókemons", 
+        imgProject: Projeto4, 
+        urlProject: "https://iaraamancio.github.io/Consumindo-Uma-API-de-Pokemon-com-Javascript/", 
+        urlRepositorio: "https://github.com/IaraAmancio/Consumindo-Uma-API-de-Pokemon-com-Javascript", 
+        stacks: ["HTML", "CSS", "JAVASCRIPT"]
+    }, 
+  ]
+
+
+
 
   return (
     <div className="bg-black text-white min-h-screen">
@@ -69,7 +127,7 @@ function App() {
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
           <p className="text-lg md:text-xl leading-relaxed text-gray-300">
             Desenvolvedora front-end com formação em <strong>Engenharia de Computação</strong> e
-            sólida experiência em projetos utilizando JavaScript, TypeScript, React.js, Redux e Tailwind CSS. 
+            sólida experiência em projetos utilizando JavaScript, TypeScript, React.js, Next.js, Tailwind e Node.js. 
             Sou apaixonada por desenvolvimento web e comprometida com performance, acessibilidade e a entrega de interfaces de alta qualidade.
           </p>
         </div>
@@ -137,44 +195,65 @@ function App() {
       </motion.div>
 
 
-      {/* Seção Meus Projetos */}
+    {/* Seção Meus Projetos */}
       <motion.div
         initial={{ x: "-100%" }}
         whileInView={{ x: "0%" }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        viewport={{ once: false }}     
-    >
-      <section id="projetos" className="px-4 py-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Meus Projetos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={FotoProjeto1} alt="Projeto 1" className="w-full h-1/2 mb-4 rounded object-cover" />
-            <h3 className="text-xl font-semibold mb-2">Planejador de Atividades</h3>
-            <p className="mb-4 text-gray-400">Um site para gerenciar tarefas diárias, desenvolvido com JavaScript.</p>
-            <a href='https://iaraamancio.github.io/ProjetoRocketSeat/'>            
-              <button className="bg-white text-black px-4 py-2 rounded font-semibold hover:bg-gray-200 transition">Ver Mais</button>
-            </a>          
-          </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={FotoProjeto2} alt="Projeto 2" className="w-full h-1/2 mb-4 rounded object-cover" />
-            <h3 className="text-xl font-semibold mb-2">Library Web Service</h3>
-            <p className="mb-4 text-gray-400">A plataforma mostra artigos de uma API e resultados de busca, usando JavaScript e React.js</p>
-            <a href='https://iaraamancio.github.io/LibraryWebService/'>
-              <button className="bg-white text-black px-4 py-2 rounded font-semibold hover:bg-gray-200 transition">Ver Mais</button>
-            </a>
-          </div>
-          <div className="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition">
-            <img src={FotoProjeto3} alt="Projeto 3" className="w-full h-1/2 mb-4 rounded object-cover" />
-            <h3 className="text-xl font-semibold mb-2">Consulta de Pokemons</h3>
-            <p className="mb-4">Consumindo uma API com HTML, CSS e JavaScript.</p>
-            <a href='https://iaraamancio.github.io/Consumindo-Uma-API-de-Pokemon-com-Javascript/'>
-              <button className="bg-white text-black px-4 py-2 rounded font-semibold hover:bg-gray-200 transition">Ver Mais</button>
-            </a>
-          </div>
-        </div>
-      </section>
+        viewport={{ once: false }}
+      >
+
+        <div className='w-full max-w-5/6 mx-auto relative'>
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-2">Meus Projetos</h2>
+          <h4 className='text-center mb-12'>Projetos pessoais que desenvolvi</h4>
+
+          <div className='w-full mx-auto overflow-hidden' ref={emblaRef}>
+
+            <div className='flex gap-6 touch-pan-y touch-pinch-zoom'>
+              {
+                projects.map((project)=>{
+                  return(
+                    <div key={project.id} className="min-w-0 flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] p-6 rounded-lg text-center transition group">
+                      <div className='relative overflow-hidden border-b-4  border-white'>
+                        <img src={project.imgProject} alt={project.title} className="w-full h-48 mb-4 rounded object-cover transition duration-300 group-hover:brightness-50 group-hover:scale-120" />
+                        <div className="absolute inset-0 flex justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition duration-300">
+                          <a href={project.urlRepositorio}>            
+                            <button className="bg-white/70 text-black px-4 py-2 rounded-full font-semibold hover:bg-white transition">
+                              Repositório
+                            </button>
+                          </a>                   
+                          <a href={project.urlProject}>            
+                            <button className="bg-white/70 text-black px-4 py-2 rounded-full font-semibold hover:bg-white transition">
+                              Projeto
+                            </button>
+                          </a>                   
+                        </div>
+                      </div>
+                    <h3 className="text-xl font-semibold mb-2 mt-2">{project.title}</h3>
+                    <p className="mb-4 text-gray-400 text-sm">{project.description}</p>
+
+                    <div className='flex justify-center mt-4 px-2 gap-2'>
+                      {project.stacks.map((stack)=>{
+                        return(
+                          <div className='text-[10px] font-medium border border-white/50 rounded-md p-1 text-white/50'>{stack}</div>                       
+                        )
+                      })}
+                    </div>
+                  </div>
+                  )
+                })
+              }         
+            </div>
+  
+            </div>
+            <button className='bg-zinc-600 p-1 rounded-full absolute left-0 -translate-x-1/2 top-1/2 cursor-pointer' onClick={goToPrev}><LuChevronLeft size={24}/></button>
+            <button className='bg-zinc-600 p-1 rounded-full absolute right-0 translate-x-1/2 top-1/2 cursor-pointer' onClick={goToNext}><LuChevronRight size={24}/></button>
+
+        </div>  
+
       </motion.div>
 
+      
 
       {/* Seção Meus Contatos */}
       <motion.div
