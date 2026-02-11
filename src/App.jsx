@@ -14,7 +14,7 @@ import Redux from './assets/icones-tecnologias/redux.svg';
 import Tailwind from './assets/icones-tecnologias/tailwindcss.svg';
 import TypeScript from './assets/icones-tecnologias/typescript.svg';
 import Next from './assets/icones-tecnologias/nextdotjs.svg';
-import Figma from './assets/icones-tecnologias/figma.svg'
+import Figma from './assets/icones-tecnologias/figma.svg';
 
 import {FaGithub} from 'react-icons/fa';
 import {FaLinkedin} from 'react-icons/fa';
@@ -27,6 +27,7 @@ import Projeto2 from './assets/foto-projetos/projeto1.png';
 import Projeto3 from './assets/foto-projetos/projeto2.png';
 import Projeto4 from './assets/foto-projetos/projeto3.png';
 
+import { Header } from './components/header';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from  'embla-carousel-autoplay';
@@ -86,32 +87,35 @@ function App() {
 
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen w-full">
+      <Header/>
+
       {/* Seção Inicial */}
       <motion.div
         initial={{ x: "-100%" }}
         whileInView={{ x: "0%" }}
         transition={{ duration: 1, ease: "easeInOut" }}
         viewport={{ once: false }}>
-      <section id="inicio" className="flex items-center justify-center w-full px-4 min-h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:justify-items-end justify-items-center gap-8 w-full max-w-4xl">
-          <div className="flex flex-col justify-center items-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Olá, sou Iara Amancio</h1>
-            <p className="text-lg md:text-xl mb-6 text-gray-300">Desenvolvedora Front-end | JavaScript | TypeScript | React | Node.js</p>
-            <div className='flex gap-2'>
-              <button className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"><a href="https://drive.google.com/file/d/1v35wi7VauTIfi4vX3AQrXAG3ifjGhC2n/view?usp=sharing">Donwload CV</a></button>
-              <button  className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"><a href="https://wa.me/5588999966424">Entrar em contato</a></button>
+
+        <section id="inicio" className="flex justify-center w-full px-4 mb-30 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8 w-full max-w-4xl">
+            <div className="flex flex-col order-last md:order-first justify-items-center">
+              <h1 className="text-4xl md:text-6xl md:text-start text-center font-bold mb-4">Olá, sou Iara Amancio</h1>
+              <p className="text-lg md:text-xl md:text-start mb-6 text-gray-300 text-center">Desenvolvedora Front-end | JavaScript | TypeScript | React | Node.js</p>
+              <div className='flex gap-2 md:justify-start justify-center'>
+                <button className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"><a href="https://drive.google.com/file/d/18vTMLVmKMMqfH0g_t8WbKhTJasQO7tUS/view?usp=sharing">Donwload CV</a></button>
+                <button  className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"><a href="https://wa.me/5588999966424">Entrar em contato</a></button>
+              </div>
+            </div>
+            <div className="flex justify-center order-first md:order-last items-center rounded-full shadow-lg overflow-hidden w-72 h-72 md:w-86 md:h-86 border-4 border-amber-50 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
+              <img 
+                src={Foto_iara}
+                alt="Foto Iara Amancio" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
-          <div className="flex justify-center items-center rounded-full shadow-lg overflow-hidden w-72 h-72 md:w-80 md:h-80 border-4 border-amber-50 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
-            <img 
-              src={Foto_iara}
-              alt="Foto Iara Amancio" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
+        </section>
       </motion.div>
       
 
@@ -142,10 +146,10 @@ function App() {
         transition={{ duration: 1, ease: "easeInOut" }}
         viewport={{ once: false }}      
       >
-      <section id="habilidades" className="w-full max-w-8/12 px-4 py-16 mt-8 mx-auto">
+      <section id="habilidades" className="w-full max-w-4xl px-4 py-16 mt-8 mx-auto">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-2">Habilidades</h2>
         <h4 className='text-center mb-12'>Possuo conhecimentos e já desenvolvi projetos com essas tecnologias!</h4>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-9 max-w-6xl mx-auto">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-9 max-w-6xl mx-auto">
           <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
             <img src={Html} alt="Html" className="mx-auto mb-1 rounded h-18 w-18" />
             <p className="text-base font-semibold text-black">HTML</p>
