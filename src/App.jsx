@@ -97,7 +97,7 @@ function App() {
         transition={{ duration: 1, ease: "easeInOut" }}
         viewport={{ once: false }}>
 
-        <section id="inicio" className="flex justify-center w-full px-4 mb-30 mt-16">
+        <section id="inicio" className="flex justify-center w-full px-4 py-20 mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8 w-full max-w-4xl">
             <div className="flex flex-col order-last md:order-first justify-items-center">
               <h1 className="text-4xl md:text-6xl md:text-start text-center font-bold mb-4">Olá, sou Iara Amancio</h1>
@@ -207,7 +207,7 @@ function App() {
         viewport={{ once: false }}
       >
 
-        <div className='w-full max-w-5/6 mx-auto relative'>
+        <div id='projetos' className='w-full max-w-11/12 mx-auto relative'>
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-2">Meus Projetos</h2>
           <h4 className='text-center mb-12'>Projetos pessoais que desenvolvi</h4>
 
@@ -219,7 +219,7 @@ function App() {
                   return(
                     <div key={project.id} className="min-w-0 flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] p-6 rounded-lg text-center transition group">
                       <div className='relative overflow-hidden border-b-4  border-white'>
-                        <img src={project.imgProject} alt={project.title} className="w-full h-48 mb-4 rounded object-cover transition duration-300 group-hover:brightness-50 group-hover:scale-120" />
+                        <img src={project.imgProject} alt={project.title} className="w-full h-56 mb-4 rounded object-cover transition duration-300 group-hover:brightness-50 group-hover:scale-120" />
                         <div className="absolute inset-0 flex justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition duration-300">
                           <a href={project.urlRepositorio}>            
                             <button className="bg-white/70 text-black px-4 py-2 rounded-full font-semibold hover:bg-white transition">
