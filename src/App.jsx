@@ -66,7 +66,7 @@ function App() {
         title: "Plataforma E-commerce",
         description: "Projeto para vendas de carros, com autenticação de usuário", 
         imgProject: Projeto1, 
-        urlProject: "plataforma-de-vendas-eight.vercel.app", 
+        urlProject: "https://plataforma-de-vendas-eight.vercel.app", 
         urlRepositorio: "https://github.com/IaraAmancio/PlataformaDeVendas", 
         stacks: ["TYPESCRIPT", ,"REACT", "TAILWIND", "FIREBASE"]
     }, 
