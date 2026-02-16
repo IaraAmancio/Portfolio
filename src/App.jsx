@@ -1,5 +1,5 @@
 // App.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { motion } from 'motion/react';
 
@@ -31,16 +31,32 @@ import { Header } from './components/header';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from  'embla-carousel-autoplay';
+import { pre } from 'motion/react-m';
 
 function App() {
-  const [ emblaRef, emblaApi ] = useEmblaCarousel({loop: false}, [Autoplay({delay: 3000})]);
+  const [ emblaRef, emblaApi ] = useEmblaCarousel({loop: false}, ); //[Autoplay({delay: 5000})]
+
+  const [ prevVisible, setPrevVisible ] = useState(true);
+  const [ nextVisible, setNextVisible ] = useState(true);
 
   const goToPrev = () => emblaApi?.scrollPrev();
   const goToNext = () => emblaApi?.scrollNext();
+
+  const updateButtons = () => {
+    if(!emblaApi) return
+    setPrevVisible(!emblaApi.canScrollPrev());
+    setNextVisible(!emblaApi.canScrollNext());
+  }
   
   useEffect(()=>{
     if(!emblaApi) return
-      emblaApi.plugins().autoplay?.play()
+
+    //emblaApi.plugins().autoplay?.play();
+
+    updateButtons();
+    emblaApi.on("select", updateButtons);
+    emblaApi.on("reInit", updateButtons);
+
   },[emblaApi])
   
 
@@ -101,7 +117,8 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8 w-full max-w-4xl">
             <div className="flex flex-col order-last md:order-first justify-items-center">
               <h1 className="text-4xl md:text-6xl md:text-start text-center font-bold mb-4">Olá, sou Iara Amancio</h1>
-              <p className="text-lg md:text-xl md:text-start mb-6 text-gray-300 text-center">Desenvolvedora Front-end | JavaScript | TypeScript | React | Node.js</p>
+              <p className="text-xl md:text-xl font-medium md:text-start text-gray-300 text-center">Desenvolvedora Full Stack Júnior</p>
+              <p className="text-sm md:text-sm md:text-start mb-6 text-gray-300 text-center">JavaScript | TypeScript | React | Node.js</p>
               <div className='flex gap-2 md:justify-start justify-center'>
                 <button className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"><a href="https://drive.google.com/file/d/18vTMLVmKMMqfH0g_t8WbKhTJasQO7tUS/view?usp=sharing">Donwload CV</a></button>
                 <button  className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"><a href="https://wa.me/5588999966424">Entrar em contato</a></button>
@@ -148,7 +165,7 @@ function App() {
       >
       <section id="habilidades" className="w-full max-w-4xl px-4 py-16 mt-8 mx-auto">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-2">Habilidades</h2>
-        <h4 className='text-center mb-12'>Possuo conhecimentos e já desenvolvi projetos com essas tecnologias!</h4>
+        <h4 className='text-center mb-12'>Hard skills utilizadas na construção de soluções web, seguindo boas práticas de desenvolvimento e padrões modernos.</h4>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-9 max-w-6xl mx-auto">
           <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
             <img src={Html} alt="Html" className="mx-auto mb-1 rounded h-18 w-18" />
@@ -209,7 +226,7 @@ function App() {
 
         <div id='projetos' className='w-full max-w-11/12 mx-auto relative'>
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-2">Meus Projetos</h2>
-          <h4 className='text-center mb-12'>Projetos pessoais que desenvolvi</h4>
+          <h4 className='text-center mb-12'>Aqui você encontra aplicações que demonstram minha experiência prática com desenvolvimento front-end, integração com APIs e criação de interfaces modernas.</h4>
 
           <div className='w-full mx-auto overflow-hidden' ref={emblaRef}>
 
@@ -218,9 +235,9 @@ function App() {
                 projects.map((project)=>{
                   return(
                     <div key={project.id} className="min-w-0 flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] p-6 rounded-lg text-center transition group">
-                      <div className='relative overflow-hidden border-b-4  border-white'>
+                      <div className='relative overflow-hidden md:border-b-4  md:border-white'>
                         <img src={project.imgProject} alt={project.title} className="w-full h-56 mb-4 rounded object-cover transition duration-300 group-hover:brightness-50 group-hover:scale-120" />
-                        <div className="absolute inset-0 flex justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div className="md:absolute md:inset-0 md:opacity-0 flex justify-center items-center gap-2 group-hover:opacity-100 transition duration-300">
                           <a href={project.urlRepositorio}>            
                             <button className="bg-white/70 text-black px-4 py-2 rounded-full font-semibold hover:bg-white transition">
                               Repositório
@@ -250,8 +267,16 @@ function App() {
             </div>
   
             </div>
-            <button className='bg-zinc-600 p-1 rounded-full absolute left-0 -translate-x-1/2 top-1/2 cursor-pointer' onClick={goToPrev}><LuChevronLeft size={24}/></button>
-            <button className='bg-zinc-600 p-1 rounded-full absolute right-0 translate-x-1/2 top-1/2 cursor-pointer' onClick={goToNext}><LuChevronRight size={24}/></button>
+            <button disabled={prevVisible} 
+              className = {`bg-zinc-600 opacity-50 p-1 rounded-full absolute left-0 -translate-x-1/2 top-1/2  ${prevVisible && "invisible"}`} 
+              onClick={goToPrev}>
+                <LuChevronLeft size={24}/>
+            </button>
+            <button disabled={nextVisible}
+              className={`bg-zinc-600 opacity-50 p-1 rounded-full absolute right-0 translate-x-1/2 top-1/2  ${nextVisible && "invisible"}`}
+              onClick={goToNext}>
+                <LuChevronRight size={24}/>
+              </button>
 
         </div>  
 
@@ -268,31 +293,31 @@ function App() {
       >
       <section id="contatos" className="px-4 py-16">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Meus Contatos</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-4xl mx-auto">
           <div className="flex flex-col items-center p-6 text-center hover:scale-110 transition">
-            <div className='bg-gray-800 p-4 mb-3 rounded-full'>
-               <FaWhatsapp size={50}/>
+            <div className='bg-white p-3 mb-3 rounded-full transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105'>
+               <FaWhatsapp size={40} color='black'/>
             </div>
-            <a href="https://wa.me/5588999966424" className="text-xl font-semibold hover:underline">WhatsApp</a>
-            <p className='text-gray-400'>88 99996-6424</p>
+            <a href="https://wa.me/5588999966424" className="text-xl font-semibold hover:underline">Telefone</a>
+            <p className='text-gray-400'>(88) 99996-6424</p>
           </div>
           <div className="flex flex-col items-center p-6 text-center hover:scale-110 transition">
-            <div className='bg-gray-800 p-4 mb-3 rounded-full'>
-              <FaGithub size={50}/>
+            <div className='bg-white p-3 mb-3 rounded-full transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105'>
+              <FaGithub size={40} color='black'/>
             </div>
             <a href="https://github.com/IaraAmancio" className="text-xl font-semibold hover:underline">GitHub</a>
             <p className='text-gray-400'>@IaraAmancio</p>
           </div>
           <div className="flex flex-col items-center p-6 text-center hover:scale-110 transition">
-            <div className='bg-gray-800 p-4 mb-3 rounded-full'>
-              <FaLinkedin size={50}/>
+            <div className='bg-white p-3 mb-3 rounded-full transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105'>
+              <FaLinkedin size={40} color='black'/>
             </div>
             <a href="https://www.linkedin.com/in/iara-amancio-48aa85231/" className="text-xl font-semibold hover:underline">LinkedIn</a>
             <p className='text-gray-400'>@IaraAmancio</p>
           </div>
           <div className="flex flex-col items-center p-6 text-center hover:scale-110 transition">
-            <div className='bg-gray-800 p-4 mb-3 rounded-full'>
-              <MdEmail size={50}/>
+            <div className='bg-white p-3 mb-3 rounded-full transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105'>
+              <MdEmail size={40} color='black'/>
             </div>
             <a href="mailto:iaraamancio1986@gmail.com" className="text-xl font-semibold hover:underline">Email</a>
             <p className='text-gray-400 overflow-hidden md:break-normal break-all'>iaraamancio1986@gmail.com</p>         
