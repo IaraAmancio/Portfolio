@@ -19,8 +19,11 @@ import Figma from './assets/icones-tecnologias/figma.svg';
 import {FaGithub} from 'react-icons/fa';
 import {FaLinkedin} from 'react-icons/fa';
 import {FaWhatsapp} from 'react-icons/fa';
+import {BsDownload} from 'react-icons/bs'
 import {MdEmail} from 'react-icons/md';
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
+import { TbDeviceImacCode } from "react-icons/tb";
+
 
 import Projeto1 from './assets/foto-projetos/projeto4.png';
 import Projeto2 from './assets/foto-projetos/projeto1.png';
@@ -100,6 +103,11 @@ function App() {
   ]
 
 
+    const abrirLink = () => {
+        window.open('https://drive.google.com/file/d/18vTMLVmKMMqfH0g_t8WbKhTJasQO7tUS/view', '_blank');
+
+    }
+
 
 
   return (
@@ -120,8 +128,17 @@ function App() {
               <p className="text-xl md:text-xl font-medium md:text-start text-gray-300 text-center">Desenvolvedora Full Stack Júnior</p>
               <p className="text-sm md:text-sm md:text-start mb-6 text-gray-300 text-center">JavaScript | TypeScript | React | Node.js</p>
               <div className='flex gap-2 md:justify-start justify-center'>
-                <button className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"><a href="https://drive.google.com/file/d/18vTMLVmKMMqfH0g_t8WbKhTJasQO7tUS/view?usp=sharing">Donwload CV</a></button>
-                <button  className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"><a href="https://wa.me/5588999966424">Entrar em contato</a></button>
+                <button onClick={abrirLink}
+                  className="bg-white flex gap-2 items-center cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition"
+                  >
+                      <span className='text-xl'>Currículo</span> 
+                      <BsDownload size={22}/>
+                </button>
+                <button  
+                className="bg-white flex gap-2 items-center text-black px-6 py-3 rounded-full cursor-pointer font-semibold hover:bg-gray-200 transition">
+                      <span className='text-xl'>Ver Projetos</span>
+                      <TbDeviceImacCode size={22}/>
+                  </button>
               </div>
             </div>
             <div className="flex justify-center order-first md:order-last items-center rounded-full shadow-lg overflow-hidden w-72 h-72 md:w-86 md:h-86 border-4 border-amber-50 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
