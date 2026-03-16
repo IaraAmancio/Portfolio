@@ -4,7 +4,7 @@ import { MdEmail } from 'react-icons/md'
 
 export function Lateral(){
     return(
-        <div className='fixed w-10 h-screen top-0 left-0 hidden md:flex flex-col items-center justify-center gap-8 z-1000 px-4 bg-zinc-950 '>
+        <div className='fixed w-10 h-screen top-0 left-0 hidden md:flex flex-col items-center justify-center gap-8 z-1000 px-4 bg-black '>
             <a href="https://github.com/IaraAmancio" target='_blank'>
                 <FaGithub size={20}/>
             </a>

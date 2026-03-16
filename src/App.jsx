@@ -1,6 +1,6 @@
 // App.js
-import React, { useEffect, useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { MaquinaDeEscrever } from './components/maquinaDeEscrever';
 import { motion } from 'motion/react';
 
 import Foto_iara from './assets/foto_iara.jpg';
@@ -120,18 +120,22 @@ function App() {
         viewport={{ once: false }}>
 
         <section id="inicio" className="flex justify-center box-border items-center w-full min-h-[calc(100vh-theme(space.24))] px-4 ">
-          <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8 w-full max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 w-full max-w-4xl">
             <div className="flex flex-col order-last md:order-first justify-items-center">
-                <h1 className="text-4xl md:text-6xl md:text-start text-center font-bold">Olá, sou Iara</h1>
+                <h1 className="text-4xl md:text-6xl md:text-start text-center font-semibold">
+                  <MaquinaDeEscrever text="Olá, sou Iara" /> 
+                </h1>
                 <div className='flex justify-center md:justify-start'>
-                  <h1 className="text-4xl md:text-6xl md:text-start text-center font-bold mb-4">Amancio</h1>
+                  <h1 className="text-4xl md:text-6xl md:text-start text-center font-semibold mb-4">
+                    <MaquinaDeEscrever text="              Amancio"/>
+                  </h1>
                   <motion.p
                     animate={{ opacity: [0, 1, 0]}}
                     transition={{
                       duration: 1,
                       repeat: Infinity
                     }}
-                    className="text-4xl md:text-5xl">
+                    className="text-4xl md:text-6xl">
                     |
                   </motion.p>                  
                 </div>          
@@ -142,20 +146,20 @@ function App() {
                 <button onClick={abrirLink}
                   className="bg-white flex gap-2 items-center cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition"
                   >
-                      <span className='md:text-xl text-[18px] font-medium'>Currículo</span> 
+                      <span className='md:text-xl text-[16px] font-medium'>Currículo</span> 
                       <BsDownload size={22}/>
                 </button>
                 <a href='#projetos'>
                   <button  
                   className="bg-white flex gap-2 items-center text-black px-6 py-3 rounded-full cursor-pointer font-semibold hover:bg-gray-200 transition">
-                        <span className='md:text-xl text-[18px] font-medium'>Ver Projetos</span>
+                        <span className='md:text-xl text-[16px] font-medium'>Ver Projetos</span>
                         <TbDeviceImacCode size={22}/>
                   </button>
                 </a>
 
               </div>
             </div>
-            <div className="flex justify-center order-first md:order-last items-center rounded-full shadow-lg overflow-hidden w-72 h-72 md:w-86 md:h-86 border-4 border-amber-50 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
+            <div className="w-11/12 mx-auto flex justify-center order-first md:order-last items-center rounded-2xl shadow-lg overflow-hidden md:w-86 md:h-86  transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
               <img 
                 src={Foto_iara}
                 alt="Foto Iara Amancio" 
