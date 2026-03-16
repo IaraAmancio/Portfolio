@@ -24,7 +24,6 @@ import {MdEmail} from 'react-icons/md';
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { TbDeviceImacCode } from "react-icons/tb";
 
-
 import Projeto1 from './assets/foto-projetos/projeto4.png';
 import Projeto2 from './assets/foto-projetos/projeto1.png';
 import Projeto3 from './assets/foto-projetos/projeto2.png';
@@ -33,8 +32,8 @@ import Projeto4 from './assets/foto-projetos/projeto3.png';
 import { Header } from './components/header';
 
 import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from  'embla-carousel-autoplay';
-import { pre } from 'motion/react-m';
+import { Lateral } from './components/lateral';
+
 
 function App() {
   const [ emblaRef, emblaApi ] = useEmblaCarousel({loop: false}, ); //[Autoplay({delay: 5000})]
@@ -105,15 +104,14 @@ function App() {
 
     const abrirLink = () => {
         window.open('https://drive.google.com/file/d/18vTMLVmKMMqfH0g_t8WbKhTJasQO7tUS/view', '_blank');
-
     }
 
 
 
   return (
     <div className="bg-black text-white min-h-screen w-full">
+      <Lateral/>
       <Header/>
-
       {/* Seção Inicial */}
       <motion.div
         initial={{ x: "-100%" }}
@@ -121,7 +119,7 @@ function App() {
         transition={{ duration: 1, ease: "easeInOut" }}
         viewport={{ once: false }}>
 
-        <section id="inicio" className="flex justify-center w-full px-4 py-20 mt-20">
+        <section id="inicio" className="flex justify-center box-border items-center w-full min-h-[calc(100vh-theme(space.24))] px-4 ">
           <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8 w-full max-w-4xl">
             <div className="flex flex-col order-last md:order-first justify-items-center">
               <h1 className="text-4xl md:text-6xl md:text-start text-center font-bold mb-4">Olá, sou Iara Amancio</h1>
@@ -134,11 +132,14 @@ function App() {
                       <span className='text-xl'>Currículo</span> 
                       <BsDownload size={22}/>
                 </button>
-                <button  
-                className="bg-white flex gap-2 items-center text-black px-6 py-3 rounded-full cursor-pointer font-semibold hover:bg-gray-200 transition">
-                      <span className='text-xl'>Ver Projetos</span>
-                      <TbDeviceImacCode size={22}/>
+                <a href='#projetos'>
+                  <button  
+                  className="bg-white flex gap-2 items-center text-black px-6 py-3 rounded-full cursor-pointer font-semibold hover:bg-gray-200 transition">
+                        <span className='text-xl'>Ver Projetos</span>
+                        <TbDeviceImacCode size={22}/>
                   </button>
+                </a>
+
               </div>
             </div>
             <div className="flex justify-center order-first md:order-last items-center rounded-full shadow-lg overflow-hidden w-72 h-72 md:w-86 md:h-86 border-4 border-amber-50 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
