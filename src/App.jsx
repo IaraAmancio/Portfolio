@@ -103,7 +103,7 @@ function App() {
 
 
     const abrirLink = () => {
-        window.open('https://drive.google.com/file/d/15eYT0TRqMVfft0GLgYv_J4Uk4TzZwiGc/view?usp=drive_link', '_blank');
+        window.open('https://drive.google.com/file/d/1WWph3o7JFG8L-ydZ1PrdEr0jBmIkGqOL/view?usp=sharing', '_blank');
     }
 
 
@@ -122,20 +122,33 @@ function App() {
         <section id="inicio" className="flex justify-center box-border items-center w-full min-h-[calc(100vh-theme(space.24))] px-4 ">
           <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8 w-full max-w-4xl">
             <div className="flex flex-col order-last md:order-first justify-items-center">
-              <h1 className="text-4xl md:text-6xl md:text-start text-center font-bold mb-4">Olá, sou Iara Amancio</h1>
+                <h1 className="text-4xl md:text-6xl md:text-start text-center font-bold">Olá, sou Iara</h1>
+                <div className='flex justify-center md:justify-start'>
+                  <h1 className="text-4xl md:text-6xl md:text-start text-center font-bold mb-4">Amancio</h1>
+                  <motion.p
+                    animate={{ opacity: [0, 1, 0]}}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity
+                    }}
+                    className="text-4xl md:text-5xl">
+                    |
+                  </motion.p>                  
+                </div>          
+              
               <p className="text-xl md:text-xl font-medium md:text-start text-gray-300 text-center">Desenvolvedora Full Stack Júnior</p>
               <p className="text-sm md:text-sm md:text-start mb-6 text-gray-300 text-center">JavaScript | TypeScript | React | Node.js</p>
               <div className='flex gap-2 md:justify-start justify-center'>
                 <button onClick={abrirLink}
                   className="bg-white flex gap-2 items-center cursor-pointer text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition"
                   >
-                      <span className='text-xl'>Currículo</span> 
+                      <span className='md:text-xl text-[18px] font-medium'>Currículo</span> 
                       <BsDownload size={22}/>
                 </button>
                 <a href='#projetos'>
                   <button  
                   className="bg-white flex gap-2 items-center text-black px-6 py-3 rounded-full cursor-pointer font-semibold hover:bg-gray-200 transition">
-                        <span className='text-xl'>Ver Projetos</span>
+                        <span className='md:text-xl text-[18px] font-medium'>Ver Projetos</span>
                         <TbDeviceImacCode size={22}/>
                   </button>
                 </a>
