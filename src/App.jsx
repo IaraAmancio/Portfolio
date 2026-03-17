@@ -4,6 +4,8 @@ import { MaquinaDeEscrever } from './components/maquinaDeEscrever';
 import { motion } from 'motion/react';
 
 import Foto_iara from './assets/foto_iara.jpg';
+import Foto_iara2 from './assets/foto_iara2.jpg';
+
 import BootStrap from './assets/icones-tecnologias/bootstrap.svg';
 import Html from './assets/icones-tecnologias/html5.svg';
 import CSS from './assets/icones-tecnologias/css.svg';
@@ -25,9 +27,10 @@ import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { TbDeviceImacCode } from "react-icons/tb";
 
 import Projeto1 from './assets/foto-projetos/projeto4.png';
-import Projeto2 from './assets/foto-projetos/projeto1.png';
-import Projeto3 from './assets/foto-projetos/projeto2.png';
-import Projeto4 from './assets/foto-projetos/projeto3.png';
+import Projeto2 from './assets/foto-projetos/projeto5.png';
+import Projeto3 from './assets/foto-projetos/projeto1.png';
+import Projeto4 from './assets/foto-projetos/projeto2.png';
+import Projeto5 from './assets/foto-projetos/projeto3.png';
 
 import { Header } from './components/header';
 
@@ -74,27 +77,36 @@ function App() {
     }, 
     {
         id: 2,
+        title: "Médicos & Dentistas Voluntários",
+        description: "Plataforma para inscrição de serviços de Médicos e Dentistas", 
+        imgProject: Projeto2, 
+        urlProject: "https://medicos-dentistas-uhv5.vercel.app", 
+        urlRepositorio: "https://github.com/IaraAmancio/Medicos_-_Dentistas", 
+        stacks: ["JAVASCRIPT", ,"REACT", "TAILWIND"]
+    }, 
+    {
+        id: 3,
         title: "Planejador de tarefas",
         description: "Projeto desenvolvido na trilha de desenvolvimento web da RocketSeat", 
-        imgProject: Projeto2, 
+        imgProject: Projeto3, 
         urlProject: "https://iaraamancio.github.io/ProjetoRocketSeat/", 
         urlRepositorio: "https://github.com/IaraAmancio/ProjetoRocketSeat", 
         stacks: ["HTML", "CSS", "JAVASCRIPT"]
     }, 
     {
-        id: 3,
+        id: 4,
         title: "Library Web Service",
         description: "Projeto com busca de dados de API de artigos", 
-        imgProject: Projeto3, 
+        imgProject: Projeto4, 
         urlProject: "https://iaraamancio.github.io/LibraryWebService/", 
         urlRepositorio: "https://github.com/IaraAmancio/LibraryWebService", 
         stacks: ["REACT", "JAVASCRIPT"]
     }, 
     {
-        id: 4,
+        id: 5,
         title: "Consulta de Pókemons",
         description: "Consula de API de pókemons", 
-        imgProject: Projeto4, 
+        imgProject: Projeto5, 
         urlProject: "https://iaraamancio.github.io/Consumindo-Uma-API-de-Pokemon-com-Javascript/", 
         urlRepositorio: "https://github.com/IaraAmancio/Consumindo-Uma-API-de-Pokemon-com-Javascript", 
         stacks: ["HTML", "CSS", "JAVASCRIPT"]
@@ -181,11 +193,21 @@ function App() {
       <section id="sobre" className="flex justify-center items-center px-4 mt-8">
         <div className="text-center max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
-          <p className="text-lg md:text-xl leading-relaxed text-gray-300">
-            Desenvolvedora front-end com formação em <strong>Engenharia de Computação</strong> e
-            sólida experiência em projetos utilizando JavaScript, TypeScript, React.js, Next.js, Tailwind e Node.js. 
-            Sou apaixonada por desenvolvimento web e comprometida com performance, acessibilidade e a entrega de interfaces de alta qualidade.
-          </p>
+          <div className='flex flex-col md:flex-row gap-8'>
+            <div className='flex justify-center flex-2/5'>
+              <img src={Foto_iara2} className='rounded-md h-96'/>              
+            </div>
+            <div className='flex flex-3/5 px-2'> 
+              <p className="text-lg inline font-light text-center md:text-justify text-gray-300">
+                      Olá! Me chamo <span className='font-bold'>Iara Amancio</span>, tenho 24 anos e sou de Ipu, no Ceará. Sou desenvolvedora <span className='font-bold'>full stack</span> e programo <span className='font-bold'>desde 2022</span>, quando descobri minha <span className='font-bold'>paixão por tecnologia</span> e criação de soluções digitais.
+                    Tenho experiência com desenvolvimento front-end utilizando <span className='font-bold'>React, typeScript e Tailwind</span>, e estou sempre em busca de evolução constante na área.
+                      No meu tempo livre, gosto de <span className='font-bold'>correr</span>, <span className='font-bold'>fazer trilhas</span> e <span className='font-bold'>ler</span>. Também aprecio <span className='font-bold'>músicas</span> especialmente <span className='font-bold'>MPB</span>, como “O Velho e a Flor”, de Vinicius de Moraes e Toquinho, além de <span className='font-bold'>pop</span> e <span className='font-bold'>rock</span>. Nos fins de semana, gosto de <span className='font-bold'>assistir filmes</span> e <span className='font-bold'>etsar com amigos</span>.
+                      Sou uma <span className='font-bold'>pessoa leve</span>, <span className='font-bold'>comunicativa</span> e <span className='font-bold'>gosto de trabalhar em ambientes colaborativos</span>.
+              </p>    
+            </div>
+                   
+          </div>
+
         </div>
       </section>
       </motion.div>
