@@ -22,7 +22,7 @@ export function Header(){
                     <a href="#sobre" className="text-gray-300 font-medium text-lg">
                         Sobre mim
                     </a> 
-                    <a href="#" className="text-gray-300 font-medium text-lg">
+                    <a href="#habilidades" className="text-gray-300 font-medium text-lg">
                         Skills
                     </a>  
                     <a href="#projetos" className="text-gray-300 font-medium text-lg">

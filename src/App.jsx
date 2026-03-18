@@ -33,12 +33,15 @@ import Projeto4 from './assets/foto-projetos/projeto2.png';
 import Projeto5 from './assets/foto-projetos/projeto3.png';
 
 import { Header } from './components/header';
+import { Input } from './components/input';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import { Lateral } from './components/lateral';
 
 
 function App() {
+  const [nome, setNome] = useState("");
+
   const [ emblaRef, emblaApi ] = useEmblaCarousel({loop: false}, ); //[Autoplay({delay: 5000})]
 
   const [ prevVisible, setPrevVisible ] = useState(true);
@@ -145,6 +148,7 @@ function App() {
                     animate={{ opacity: [0, 1, 0]}}
                     transition={{
                       duration: 1,
+                      delay: 2,
                       repeat: Infinity
                     }}
                     className="text-4xl md:text-6xl">
@@ -190,8 +194,8 @@ function App() {
         transition={{ duration: 1, ease: "easeInOut" }}
         viewport={{ once: false }}      
       >
-      <section id="sobre" className="flex justify-center items-center px-4 mt-8">
-        <div className="text-center max-w-4xl">
+      <section id="sobre" className="flex justify-center  items-center mt-8">
+        <div className="text-center max-w-4xl py-5 px-4 bg-zinc-900 rounded-md">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
           <div className='flex flex-col md:flex-row gap-8'>
             <div className='flex justify-center flex-2/5'>
@@ -201,7 +205,7 @@ function App() {
               <p className="text-lg inline font-light text-center md:text-justify text-gray-300">
                       Olá! Me chamo <span className='font-bold'>Iara Amancio</span>, tenho 24 anos e sou de Ipu, no Ceará. Sou desenvolvedora <span className='font-bold'>full stack</span> e programo <span className='font-bold'>desde 2022</span>, quando descobri minha <span className='font-bold'>paixão por tecnologia</span> e criação de soluções digitais.
                     Tenho experiência com desenvolvimento front-end utilizando <span className='font-bold'>React, typeScript e Tailwind</span>, e estou sempre em busca de evolução constante na área.
-                      No meu tempo livre, gosto de <span className='font-bold'>correr</span>, <span className='font-bold'>fazer trilhas</span> e <span className='font-bold'>ler</span>. Também aprecio <span className='font-bold'>músicas</span> especialmente <span className='font-bold'>MPB</span>, como “O Velho e a Flor”, de Vinicius de Moraes e Toquinho, além de <span className='font-bold'>pop</span> e <span className='font-bold'>rock</span>. Nos fins de semana, gosto de <span className='font-bold'>assistir filmes</span> e <span className='font-bold'>etsar com amigos</span>.
+                      No meu tempo livre, gosto de <span className='font-bold'>correr</span>, <span className='font-bold'>fazer trilhas</span> e <span className='font-bold'>ler</span>. Também aprecio <span className='font-bold'>músicas</span> especialmente <span className='font-bold'>MPB</span>, como “O Velho e a Flor”, de Vinicius de Moraes e Toquinho, além de <span className='font-bold'>pop</span> e <span className='font-bold'>rock</span>. Nos fins de semana, gosto de <span className='font-bold'>assistir filmes</span> e <span className='font-bold'>estar com amigos</span>.
                       Sou uma <span className='font-bold'>pessoa leve</span>, <span className='font-bold'>comunicativa</span> e <span className='font-bold'>gosto de trabalhar em ambientes colaborativos</span>.
               </p>    
             </div>
@@ -349,36 +353,49 @@ function App() {
         viewport={{ once: false }}        
       >
       <section id="contatos" className="px-4 py-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Meus Contatos</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-4xl mx-auto">
-          <div className="flex flex-col items-center p-6 text-center hover:scale-110 transition">
-            <div className='bg-white p-3 mb-3 rounded-full transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105'>
-               <FaWhatsapp size={40} color='black'/>
-            </div>
-            <a href="https://wa.me/5588999966424" className="text-xl font-semibold hover:underline">Telefone</a>
-            <p className='text-gray-400'>(88) 99996-6424</p>
-          </div>
-          <div className="flex flex-col items-center p-6 text-center hover:scale-110 transition">
-            <div className='bg-white p-3 mb-3 rounded-full transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105'>
-              <FaGithub size={40} color='black'/>
-            </div>
-            <a href="https://github.com/IaraAmancio" className="text-xl font-semibold hover:underline">GitHub</a>
-            <p className='text-gray-400'>@IaraAmancio</p>
-          </div>
-          <div className="flex flex-col items-center p-6 text-center hover:scale-110 transition">
-            <div className='bg-white p-3 mb-3 rounded-full transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105'>
-              <FaLinkedin size={40} color='black'/>
-            </div>
-            <a href="https://www.linkedin.com/in/iara-amancio-48aa85231/" className="text-xl font-semibold hover:underline">LinkedIn</a>
-            <p className='text-gray-400'>@IaraAmancio</p>
-          </div>
-          <div className="flex flex-col items-center p-6 text-center hover:scale-110 transition">
-            <div className='bg-white p-3 mb-3 rounded-full transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105'>
-              <MdEmail size={40} color='black'/>
-            </div>
-            <a href="mailto:iaraamancio1986@gmail.com" className="text-xl font-semibold hover:underline">Email</a>
-            <p className='text-gray-400 overflow-hidden md:break-normal break-all'>iaraamancio1986@gmail.com</p>         
-          </div>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Contato</h2>
+        <div className="w-full bg-zinc-900 px-4 py-4 flex flex-col md:flex-row max-w-4xl mx-auto">
+              
+              <div className='w-full pr-0 md:pr-8 flex flex-col gap-4 pb-4 md:pb-0'>
+                <h1 className='text-center text-3xl mt-4 mb-2'>Meus Contatos</h1>
+                <div className="w-full flex flex-col gap-4 items-center px-2">
+                  <div className="w-full flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105">
+                    
+                    {/* Ícone */}
+                    <div className="p-2 bg-zinc-950/50 rounded-full">
+                      <FaWhatsapp size={36} color="white" />
+                    </div>
+
+                    {/* Texto */}
+                    <p className="ml-2 text-white">(88) 99996 6424</p>
+                    
+                  </div>
+                  <div className="w-full flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105">
+                    
+                    {/* Ícone */}
+                    <div className="p-2 bg-zinc-950/50 rounded-full">
+                      <MdEmail size={36} color="white" />
+                    </div>
+
+                    {/* Texto */}
+                    <p className="ml-2 text-white">iaraamancio1986@gmail.com</p>
+                    
+                  </div>
+                </div>
+              </div>
+              
+              <form className='w-full bg-zinc-100 py-4 px-3 flex flex-col gap-4 text-black rounded-md'>
+                <h1 className='text-center text-3xl'>Contact-me</h1>
+                <Input name="nome" placeholder="Digite seu nome" value={nome}/>
+                <Input name="nome" placeholder="Digite seu email" value={nome}/>
+                <textarea placeholder='Deixe sua mensagem...' 
+                className='w-full rounded-md py-2 border border-gray-300  bg-white px-4 resize-none h-32 focus:outline-none focus:ring-1 focus:ring-gray-400'
+                />
+                <button className='w-full rounded-md h-11 bg-zinc-900 text-white cursor-pointer transition-all hover:bg-black'>
+                  Enviar
+                </button>
+              </form>
+              
         </div>
       </section>
       </motion.div>
