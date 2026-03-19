@@ -34,6 +34,7 @@ import Projeto5 from './assets/foto-projetos/projeto3.png';
 
 import { Header } from './components/header';
 import { Input } from './components/input';
+import { Footer } from './components/footer';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import { Lateral } from './components/lateral';
@@ -195,17 +196,16 @@ function App() {
         viewport={{ once: false }}      
       >
       <section id="sobre" className="flex justify-center  items-center mt-8">
-        <div className="text-center max-w-4xl py-5 px-4 bg-zinc-900 rounded-md">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
-          <div className='flex flex-col md:flex-row gap-8'>
-            <div className='flex justify-center flex-2/5'>
-              <img src={Foto_iara2} className='rounded-md h-96'/>              
+        <div className="text-center max-w-4xl flex md:flex-row  flex-col  bg-white md:rounded-md">
+          <div className='flex flex-col md:flex-row gap-4'>
+            <div className='flex flex-1 justify-center'>
+              <img src={Foto_iara2} className='md:rounded-md '/>              
             </div>
-            <div className='flex flex-3/5 px-2'> 
-              <p className="text-lg inline font-light text-center md:text-justify text-gray-300">
-                      Olá! Me chamo <span className='font-bold'>Iara Amancio</span>, tenho 24 anos e sou de Ipu, no Ceará. Sou desenvolvedora <span className='font-bold'>full stack</span> e programo <span className='font-bold'>desde 2022</span>, quando descobri minha <span className='font-bold'>paixão por tecnologia</span> e criação de soluções digitais.
-                    Tenho experiência com desenvolvimento front-end utilizando <span className='font-bold'>React, typeScript e Tailwind</span>, e estou sempre em busca de evolução constante na área.
-                      No meu tempo livre, gosto de <span className='font-bold'>correr</span>, <span className='font-bold'>fazer trilhas</span> e <span className='font-bold'>ler</span>. Também aprecio <span className='font-bold'>músicas</span> especialmente <span className='font-bold'>MPB</span>, como “O Velho e a Flor”, de Vinicius de Moraes e Toquinho, além de <span className='font-bold'>pop</span> e <span className='font-bold'>rock</span>. Nos fins de semana, gosto de <span className='font-bold'>assistir filmes</span> e <span className='font-bold'>estar com amigos</span>.
+            <div className='flex flex-1 flex-col justify-center px-6 py-5'> 
+             <h2 className="text-3xl md:text-5xl text-zinc-800 font-bold mb-6">Sobre Mim</h2>
+              <p className="text-lg inline text-zinc-700 font-light text-center md:text-justify">
+                      Olá! Me chamo <span className='font-bold'>Iara Amancio</span>, tenho 24 anos e sou de Ipu, Ceará. Sou desenvolvedora <span className='font-bold'>full stack Júnior</span> e programo <span className='font-bold'>desde 2022</span>, quando descobri minha <span className='font-bold'>paixão por tecnologia</span>.
+                      No meu tempo livre, gosto de <span className='font-bold'>correr</span>, <span className='font-bold'>fazer trilhas</span> e <span className='font-bold'>ler</span> livros, especialmente do gênero de mistério. Meu personagem literário preferido é Sherlock Holmes. Também aprecio <span className='font-bold'>músicas</span> especialmente <span className='font-bold'>MPB</span>, como “O Velho e a Flor”, de Vinicius de Moraes e Toquinho, além de <span className='font-bold'>pop</span> e <span className='font-bold'>rock</span>. Nos fins de semana, gosto de <span className='font-bold'>assistir filmes</span> e <span className='font-bold'>estar com amigos</span>.
                       Sou uma <span className='font-bold'>pessoa leve</span>, <span className='font-bold'>comunicativa</span> e <span className='font-bold'>gosto de trabalhar em ambientes colaborativos</span>.
               </p>    
             </div>
@@ -285,7 +285,7 @@ function App() {
         viewport={{ once: false }}
       >
 
-        <div id='projetos' className='w-full max-w-11/12 mx-auto relative'>
+        <div id='projetos' className='w-full max-w-5xl mx-auto relative'>
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-2">Meus Projetos</h2>
           <h4 className='text-center mb-12'>Aqui você encontra aplicações que demonstram minha experiência prática com desenvolvimento front-end, integração com APIs e criação de interfaces modernas.</h4>
 
@@ -353,18 +353,17 @@ function App() {
         viewport={{ once: false }}        
       >
       <section id="contatos" className="px-4 py-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">Contato</h2>
-        <div className="w-full bg-zinc-900 px-4 py-4 flex flex-col md:flex-row max-w-4xl mx-auto">
+        <div className="w-full bg-zinc-900 px-4 py-4 flex flex-col md:flex-row gap-4 max-w-4xl mx-auto">
               
-              <div className='w-full pr-0 md:pr-8 flex flex-col gap-4 pb-4 md:pb-0'>
-                <h1 className='text-center text-3xl mt-4 mb-2'>Meus Contatos</h1>
-                <div className="w-full flex flex-col gap-4 items-center px-2">
-                  <div className="w-full flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105">
+              <div className='w-full pr-0 md:pr-8 flex flex-col gap-4 pb-4 md:pb-0 rounded-md'>
+                <h1 className='text-center text-3xl font-bold mt-4 mb-2'>Meus Contatos</h1>
+                <div className="w-full flex flex-col gap-4 items-center md:px-2">
+                  <div className="w-full  flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105 ">
                     
                     {/* Ícone */}
-                    <div className="p-2 bg-zinc-950/50 rounded-full">
-                      <FaWhatsapp size={36} color="white" />
-                    </div>
+                    <a href='https://wa.me/5588999966424' target="_blank" className="p-2 bg-white shadow-md rounded-full shadow-black">
+                      <FaWhatsapp size={36} color="black" />
+                    </a>
 
                     {/* Texto */}
                     <p className="ml-2 text-white">(88) 99996 6424</p>
@@ -373,19 +372,42 @@ function App() {
                   <div className="w-full flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105">
                     
                     {/* Ícone */}
-                    <div className="p-2 bg-zinc-950/50 rounded-full">
-                      <MdEmail size={36} color="white" />
-                    </div>
+                    <a href='mailto:iaraamancio1986@gmail.com' target='_blank' className="p-2 bg-white rounded-full shadow-md shadow-black">
+                      <MdEmail size={36} color="black" />
+                    </a>
 
                     {/* Texto */}
                     <p className="ml-2 text-white">iaraamancio1986@gmail.com</p>
                     
                   </div>
+                  <div className="w-full  flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105 ">
+                    
+                    {/* Ícone */}
+                    <a href='https://www.linkedin.com/in/iara-amancio-48aa85231/' target='_blank' className="p-2 bg-white shadow-md rounded-full shadow-black">
+                      <FaLinkedin size={36} color="black" />
+                    </a>
+
+                    {/* Texto */}
+                    <p className="ml-2 text-white text-base/5">linkedin.com/in/iara-amancio-48aa85231</p>
+                    
+                  </div>
+                  <div className="w-full flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105">
+                    
+                    {/* Ícone */}
+                    <a href='https://github.com/IaraAmancio' target='_blank' className="p-2 bg-white rounded-full shadow-md shadow-black">
+                      <FaGithub size={36} color="black" />
+                    </a>
+
+                    {/* Texto */}
+                    <p className="ml-2 text-white">https://github.com/IaraAmancio</p>
+                    
+                  </div>
+                 
                 </div>
               </div>
               
-              <form className='w-full bg-zinc-100 py-4 px-3 flex flex-col gap-4 text-black rounded-md'>
-                <h1 className='text-center text-3xl'>Contact-me</h1>
+              <form className='w-full bg-zinc-100 py-4 px-3 flex flex-col gap-4 text-black rounded-md shadow-lg shadow-black'>
+                <h1 className='text-center text-3xl'>Contate-me</h1>
                 <Input name="nome" placeholder="Digite seu nome" value={nome}/>
                 <Input name="nome" placeholder="Digite seu email" value={nome}/>
                 <textarea placeholder='Deixe sua mensagem...' 
@@ -399,7 +421,7 @@ function App() {
         </div>
       </section>
       </motion.div>
-
+      <Footer/>
     </div>
   );
 }
