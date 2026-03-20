@@ -2,8 +2,8 @@
 
 export function Footer(){
     return(
-        <div className="text-center py-5 border-t border-gray-300">
-            <p className="text-[12px]">© 2026 | Site desenvolvidor por Iara Amancio</p>
+        <div className="text-center h-24 flex justify-center items-center ">
+            <p className="text-[12px]">© 2026 | Site desenvolvido por Iara Amancio</p>
         </div>
     )
 }

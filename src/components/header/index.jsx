@@ -10,7 +10,7 @@ export function Header(){
     const handleClose = () => { setOpen(false) };
 
     return (
-        <div className="w-full top-0 left-0 z-50 box-border bg-black px-6 h-24 flex items-center justify-center">
+        <div className="w-full top-0 left-0 z-50 box-border bg-neutral-950 px-6 h-24 flex items-center justify-center">
             <nav className="w-full max-w-4xl hidden md:flex items-end justify-between">
                 <a href="#">
                     <h2 className="text-5xl font-bold">IaraDev</h2>

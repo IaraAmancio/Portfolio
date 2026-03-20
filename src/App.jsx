@@ -6,15 +6,15 @@ import { motion } from 'motion/react';
 import Foto_iara from './assets/foto_iara.jpg';
 import Foto_iara2 from './assets/foto_iara2.jpg';
 
-import BootStrap from './assets/icones-tecnologias/bootstrap.svg';
-import Html from './assets/icones-tecnologias/html5.svg';
-import CSS from './assets/icones-tecnologias/css.svg';
-import JavaScript from './assets/icones-tecnologias/javascript.svg';
-import Node from './assets/icones-tecnologias/nodedotjs.svg';
-import ReactIcone from './assets/icones-tecnologias/react.svg';
-import Redux from './assets/icones-tecnologias/redux.svg';
-import Tailwind from './assets/icones-tecnologias/tailwindcss.svg';
-import TypeScript from './assets/icones-tecnologias/typescript.svg';
+import BootStrap from './assets/icones-tecnologias/bootstrap.png';
+import Html from './assets/icones-tecnologias/html.png';
+import CSS from './assets/icones-tecnologias/css.png';
+import JavaScript from './assets/icones-tecnologias/javascript.png';
+import Node from './assets/icones-tecnologias/node.png';
+import ReactIcone from './assets/icones-tecnologias/react.png';
+import Redux from './assets/icones-tecnologias/redux.png';
+import Tailwind from './assets/icones-tecnologias/tailwind.png';
+import TypeScript from './assets/icones-tecnologias/typescript.png';
 import Next from './assets/icones-tecnologias/nextdotjs.svg';
 import Figma from './assets/icones-tecnologias/figma.svg';
 
@@ -125,7 +125,7 @@ function App() {
 
 
   return (
-    <div className="bg-black text-white min-h-screen w-full">
+    <div className="bg-neutral-950 text-white min-h-screen w-full">
       <Lateral/>
       <Header/>
       {/* Seção Inicial */}
@@ -176,7 +176,7 @@ function App() {
 
               </div>
             </div>
-            <div className="w-11/12 mx-auto flex justify-center order-first md:order-last items-center rounded-2xl shadow-lg overflow-hidden md:w-86 md:h-86  transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
+            <div className="w-11/12 mx-auto flex justify-center order-first md:order-last items-center rounded-2xl shadow-lg overflow-hidden md:w-86 md:h-86 h-76  transition delay-150 duration-300 ease-in-out hover:scale-110 hover:translate-y-1">
               <img 
                 src={Foto_iara}
                 alt="Foto Iara Amancio" 
@@ -198,10 +198,10 @@ function App() {
       <section id="sobre" className="flex justify-center  items-center mt-8">
         <div className="text-center max-w-4xl flex md:flex-row  flex-col  bg-white md:rounded-md">
           <div className='flex flex-col md:flex-row gap-4'>
-            <div className='flex flex-1 justify-center'>
+            <div className='flex flex-1 order-last md:order-first justify-center'>
               <img src={Foto_iara2} className='md:rounded-md '/>              
             </div>
-            <div className='flex flex-1 flex-col justify-center px-6 py-5'> 
+            <div className='flex flex-1 flex-col justify-center px-6 py-8'> 
              <h2 className="text-3xl md:text-5xl text-zinc-800 font-bold mb-6">Sobre Mim</h2>
               <p className="text-lg inline text-zinc-700 font-light text-center md:text-justify">
                       Olá! Me chamo <span className='font-bold'>Iara Amancio</span>, tenho 24 anos e sou de Ipu, Ceará. Sou desenvolvedora <span className='font-bold'>full stack Júnior</span> e programo <span className='font-bold'>desde 2022</span>, quando descobri minha <span className='font-bold'>paixão por tecnologia</span>.
@@ -225,54 +225,55 @@ function App() {
         viewport={{ once: false }}      
       >
       <section id="habilidades" className="w-full max-w-4xl px-4 py-16 mt-8 mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-2">Habilidades</h2>
-        <h4 className='text-center mb-12'>Hard skills utilizadas na construção de soluções web, seguindo boas práticas de desenvolvimento e padrões modernos.</h4>
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-9 max-w-6xl mx-auto">
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={Html} alt="Html" className="mx-auto mb-1 rounded h-18 w-18" />
-            <p className="text-base font-semibold text-black">HTML</p>
-          </div>
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={CSS} alt="Css" className="mx-auto mb-1 rounded h-18 w-18" />
-            <p className="text-base font-semibold text-black">CSS</p>
-          </div>
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={JavaScript} alt="JavaScript" className="mx-auto mb-1 rounded h-18 w-18" />
-            <p className="text-base font-semibold text-black">JavaScript</p>
-          </div>
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={TypeScript} alt="TypeScript" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
-            <p className="text-base font-semibold text-black">TypeScript</p>
-          </div>
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={Next} alt="Next.js" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
-            <p className="text-base font-semibold text-black">Next.js</p>
-          </div>
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={ReactIcone} alt="React" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
-            <p className="text-base font-semibold text-black">React</p>
-          </div>
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={Tailwind} alt="Tailwind" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
-            <p className="text-base font-semibold text-black">Tailwind</p>
-          </div>
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={BootStrap} alt="Bootstrap" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
-            <p className="text-base font-semibold text-black">BootStrap</p>
-          </div>
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={Figma} alt="Figma" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
-            <p className="text-base font-semibold text-black">Figma</p>
-          </div>          
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={Redux} alt="Redux" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
-            <p className="text-base font-semibold text-black">Redux</p>
-          </div>
-          <div className="bg-white py-4 rounded-lg text-center transition-all shadow-xl duration-300 hover:shadow-[0_0_25px_rgba(96,165,250,0.5)] hover:scale-105">
-            <img src={Node} alt="Node.js" className="mx-auto mb-1 rounded h-18 w-18 object-contain" />
-            <p className="text-base font-semibold text-black">Node.js</p>
-          </div>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-8">Habilidades</h2>
+        <div className='flex flex-col gap-5'>
+            <div className='border px-4 bg-zinc-950 py-2 rounded-md relative'>
+              <div className='absolute -top-3 bg-white text-black px-3 rounded-lg drop-shadow-[0_0_5px_rgba(96,165,250,0.5)]'>
+                <h1>Frontend</h1>
+              </div>
+              <div className="grid grid-cols-4 md:grid-cols-8 gap-y-3 py-5  max-w-6xl mx-auto">
+                <div className="hover:scale-105">
+                  <img src={Html} alt="Html" className="mx-auto h-12 w-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div>
+                <div className="hover:scale-105">
+                  <img src={CSS} alt="Css" className="mx-auto h-12 w-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div>
+                <div className="hover:scale-105">
+                  <img src={JavaScript} alt="JavaScript" className="mx-auto h-12 w-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div>
+                <div className="hover:scale-105">
+                  <img src={TypeScript} alt="TypeScript" className="mx-auto h-12 w-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div>
+                <div className="hover:scale-105">
+                  <img src={ReactIcone} alt="React" className="mx-auto h-12 w-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div>
+                <div className="hover:scale-105">
+                  <img src={Tailwind} alt="Tailwind" className="mx-auto w-12 h-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div>        
+              </div>
+            </div>
+            <div className='border px-4 bg-zinc-950 py-2 rounded-md relative'>
+              <div className='absolute -top-3 bg-white text-black px-3 rounded-lg drop-shadow-[0_0_5px_rgba(96,165,250,0.5)]'>
+                <h1>Backend</h1>
+              </div>
+              <div className="grid grid-cols-4 md:grid-cols-8 py-5  max-w-6xl mx-auto">
+                <div className="hover:scale-105">
+                  <img src={Node} alt="Html" className="mx-auto h-12 w-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div>
+                <div className="hover:scale-105">
+                  <img src={TypeScript} alt="Css" className="mx-auto h-12 w-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div> 
+                <div className="hover:scale-105">
+                  <img src={Next} alt="Html" className="mx-auto h-12 w-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div>
+                <div className="hover:scale-105">
+                  <img src={Redux} alt="Css" className="mx-auto h-12 w-12 object-contain transition-all shadow-lg duration-300 drop-shadow-[0_0_25px_rgba(96,165,250,0.5)]" />
+                </div>        
+              </div>
+            </div>
         </div>
+        
+        
       </section>
       </motion.div>
 
@@ -353,12 +354,12 @@ function App() {
         viewport={{ once: false }}        
       >
       <section id="contatos" className="px-4 py-16">
-        <div className="w-full bg-zinc-900 px-4 py-4 flex flex-col md:flex-row gap-4 max-w-4xl mx-auto">
+        <div className="w-full  px-4 py-4 flex flex-col md:flex-row gap-4 max-w-4xl mx-auto">
               
-              <div className='w-full pr-0 md:pr-8 flex flex-col gap-4 pb-4 md:pb-0 rounded-md'>
+              <div className='w-full bg-black/50 pr-0 md:pr-8 flex flex-col gap-4 pb-4 md:pb-0 rounded-md'>
                 <h1 className='text-center text-3xl font-bold mt-4 mb-2'>Meus Contatos</h1>
                 <div className="w-full flex flex-col gap-4 items-center md:px-2">
-                  <div className="w-full  flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105 ">
+                  <div className="w-full  flex items-center bg-zinc-950 rounded-full pr-4 transition-all hover:scale-105 ">
                     
                     {/* Ícone */}
                     <a href='https://wa.me/5588999966424' target="_blank" className="p-2 bg-white shadow-md rounded-full shadow-black">
@@ -369,7 +370,7 @@ function App() {
                     <p className="ml-2 text-white">(88) 99996 6424</p>
                     
                   </div>
-                  <div className="w-full flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105">
+                  <div className="w-full flex items-center bg-zinc-950 rounded-full pr-4 transition-all hover:scale-105">
                     
                     {/* Ícone */}
                     <a href='mailto:iaraamancio1986@gmail.com' target='_blank' className="p-2 bg-white rounded-full shadow-md shadow-black">
@@ -377,10 +378,10 @@ function App() {
                     </a>
 
                     {/* Texto */}
-                    <p className="ml-2 text-white">iaraamancio1986@gmail.com</p>
+                    <p className="ml-2 text-white break-all">iaraamancio1986@gmail.com</p>
                     
                   </div>
-                  <div className="w-full  flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105 ">
+                  <div className="w-full  flex items-center bg-zinc-950 rounded-full pr-4 transition-all hover:scale-105 ">
                     
                     {/* Ícone */}
                     <a href='https://www.linkedin.com/in/iara-amancio-48aa85231/' target='_blank' className="p-2 bg-white shadow-md rounded-full shadow-black">
@@ -388,10 +389,10 @@ function App() {
                     </a>
 
                     {/* Texto */}
-                    <p className="ml-2 text-white text-base/5">linkedin.com/in/iara-amancio-48aa85231</p>
+                    <p className="ml-2 text-white text-base/5 break-all">linkedin.com/in/iara-amancio-48aa85231</p>
                     
                   </div>
-                  <div className="w-full flex items-center bg-zinc-950/50 rounded-full pr-4 transition-all hover:scale-105">
+                  <div className="w-full flex items-center bg-zinc-950 rounded-full pr-4 transition-all hover:scale-105">
                     
                     {/* Ícone */}
                     <a href='https://github.com/IaraAmancio' target='_blank' className="p-2 bg-white rounded-full shadow-md shadow-black">
@@ -399,7 +400,7 @@ function App() {
                     </a>
 
                     {/* Texto */}
-                    <p className="ml-2 text-white">https://github.com/IaraAmancio</p>
+                    <p className="ml-2 text-white break-all">https://github.com/IaraAmancio</p>
                     
                   </div>
                  
